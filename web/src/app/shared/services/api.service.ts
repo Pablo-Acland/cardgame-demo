@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.post(environment.apiBase + '/juego/crear', command);
   }
 
- 
+
   getJugadores(): Observable<Jugador[]> {
     return this.afs.collection<User>(`users`).snapshotChanges().pipe(map((actions) => {
       const jugadores = actions.map(item => {
@@ -33,7 +33,10 @@ export class ApiService {
   }
 
   //TODO: consulta de mis juegos
-  getMisJuegos(uid: string) { }
+  getMisJuegos(uid: string) {
+    return this.http.get(environment.apiBase+/juego/listar/+ uid)
+
+  }
 
   //TODO: consulta de mi mazo
   getMiMazo(uid: string, juegoId: string) { }

@@ -6,6 +6,11 @@ public class CartaMaestra {
     private String uri;
     private Integer poder;
 
+    public CartaMaestra(String s, String am) {
+        this.id=s;
+        this.nombre= am;
+    }
+
     public String getId() {
         return id;
     }

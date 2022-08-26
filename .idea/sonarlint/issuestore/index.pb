@@ -4,12 +4,8 @@
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 ô
 iapplications/app-service/src/main/java/org/example/cardgame/application/generic/DeserializeException.java,6/4/6431a0be68bd9d39ae0b16231ddf11cab7abaa9a
-@
-business/pom.xml,d/4/d4ebdfff43bfaf86e620b416afb4835b5f67b594
 ç
 ]applications/app-service/src/main/java/org/example/cardgame/application/generic/EventBus.java,8/3/836923775c8ed57e6e7629350d03709d601acc21
 ô
@@ -66,20 +62,14 @@ t
 Ddomain/src/main/java/org/example/cardgame/domain/values/JuegoId.java,7/b/7b891036bc905a354d494cd63e188a124093f674
 v
 Fdomain/src/main/java/org/example/cardgame/domain/values/JugadorId.java,4/c/4c84e63b5a561a3602ef0f8cd57e585c97404e79
-v
-Fdomain/src/main/java/org/example/cardgame/domain/values/TableroId.java,9/5/95db34d51b629b9437569f5c267f333f4c2498f0
 m
 =domain/src/main/java/org/example/cardgame/domain/Jugador.java,7/e/7e017228650dc17dfe18c23b5d6849fc0e8549fa
 t
 Ddomain/src/main/java/org/example/cardgame/domain/JugadorFactory.java,5/d/5d05bb9d0f52d5986cde93b33a1094a8bc400cc0
-m
-=domain/src/main/java/org/example/cardgame/domain/Tablero.java,4/c/4cd1ad87160045a275e091fee5f68071566cc07b
 Å
 Qdomain/src/main/java/org/example/cardgame/domain/events/CartaPuestaEnTablero.java,d/4/d4f1b50a4c69715e474e3bdb43a59ec15a4cb18e
 é
 ^applications/app-service/src/main/java/org/example/cardgame/application/ApplicationConfig.java,d/0/d0a5a4f83244018ca1a937b2b104ef1a06a5637a
-q
-Adomain/src/main/java/org/example/cardgame/domain/values/Mazo.java,a/5/a5becc604365569cf877051ee46b419041cfe3d8
 r
 Bdomain/src/main/java/org/example/cardgame/domain/values/Ronda.java,7/8/78aeb62a731f509149c43d077d8a7050ecd968d5
 v
