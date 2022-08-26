@@ -1,18 +1,19 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiBase: "http://localhost:8080",
   firebase: {
-    apiKey: "AIzaSyCTF2ftyL3fjJwKWod0OYwrWo_jPuwiL9o",
-    authDomain: "card-game-sofka.firebaseapp.com",
-    projectId: "card-game-sofka",
-    storageBucket: "card-game-sofka.appspot.com",
-    messagingSenderId: "183741757287",
-    appId: "1:183741757287:web:1270c4d0325b09e912e1c2"
-  }
+    projectId: 'cardgame-d1c21',
+    appId: '1:486259807946:web:7de7a438aac445839cc633',
+    storageBucket: 'cardgame-d1c21.appspot.com',
+    apiKey: 'AIzaSyC0xCqJyv1aa_QYqIB05XYxFwFdYhpaygc',
+    authDomain: 'cardgame-d1c21.firebaseapp.com',
+    messagingSenderId: '486259807946',
+    measurementId: 'G-DG2THZYJ7P',
+  },
+  production: false,
+  apiBase: "http://localhost:8080/api"
 };
 
 /*
@@ -22,4 +23,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
