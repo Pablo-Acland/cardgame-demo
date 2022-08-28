@@ -29,7 +29,7 @@ public class QueryHandle {
     @Bean
     public RouterFunction<ServerResponse> listarJuego() {
         return route(
-                GET("/juego/listar/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                GET("/api/juego/listar/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> template.find(filterByUId(request.pathVariable("id")), JuegoListViewModel.class, "gameview")
                         .collectList()
                         .flatMap(list -> ServerResponse.ok()
@@ -38,14 +38,28 @@ public class QueryHandle {
         );
     }
 
-
-    //TODO: obtener tablero
     @Bean
-    public RouterFunction<ServerResponse> getTablero() { return null; }
+    public RouterFunction<ServerResponse> getTablero() {
+        return route(
+               GET("/api/juego/getTablero/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                request -> template.findOne(filterById(request.pathVariable("id")), TableroViewModel.class, "gameveiw")
+                        .flatMap(element -> ServerResponse.ok())
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .body(BodyInserters.fromPublisher(Mono.just(elem), TableroViewModel.class)))
+            );
+    }
 
     //TODO: obtener mazo
     @Bean
-    public RouterFunction<ServerResponse> getMazo() {return null;}
+    public RouterFunction<ServerResponse> getMazo() {
+        return route(
+                GET("/juego/mazo/{uid}/{juegoId}").and(accept(MediaType.APPLICATION_JSON)),
+                request -> template.findOne(filterByJuegoIddAndUid(request.pathVariable("uid"),request.pathVariable("juegoId")), MazoViewModel.class, "mazoview")
+                        .flatMap(elem ->ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(BodyInserters.fromPublisher(Mono.just(elem),MazoViewModel.class)))
+        );
+    }
 
     private Query filterByUId(String uid) {
         return new Query(
