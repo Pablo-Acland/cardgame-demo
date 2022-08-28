@@ -13,7 +13,6 @@ import { User } from '../model/user';
 })
 export class ApiService {
 
-
   constructor(private http: HttpClient, public afs: AngularFirestore,
   ) { }
 
@@ -34,7 +33,7 @@ export class ApiService {
 
   //TODO: consulta de mis juegos
   getMisJuegos(uid: string) {
-    return this.http.get(environment.apiBase+/juego/listar/+ uid)
+    return this.http.get(environment.apiBase + "/juego/listar/" + uid)
 
   }
 
