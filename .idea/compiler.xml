@@ -8,10 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="app-service" />
         <module name="business" />
-        <module name="domain" />
         <module name="applications" />
         <module name="app-proxy" />
+        <module name="domain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cardgamePablo" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

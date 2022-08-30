@@ -2,6 +2,8 @@ package org.example.cardgame.application.handle;
 
 
 import org.example.cardgame.application.handle.model.JuegoListViewModel;
+import org.example.cardgame.application.handle.model.MazoViewModel;
+import org.example.cardgame.application.handle.model.TableroViewModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
@@ -12,6 +14,7 @@ import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
@@ -29,7 +32,7 @@ public class QueryHandle {
     @Bean
     public RouterFunction<ServerResponse> listarJuego() {
         return route(
-                GET("/api/juego/listar/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                GET("/api/juego/listar/{id}"),
                 request -> template.find(filterByUId(request.pathVariable("id")), JuegoListViewModel.class, "gameview")
                         .collectList()
                         .flatMap(list -> ServerResponse.ok()
@@ -41,23 +44,22 @@ public class QueryHandle {
     @Bean
     public RouterFunction<ServerResponse> getTablero() {
         return route(
-               GET("/api/juego/getTablero/{id}").and(accept(MediaType.APPLICATION_JSON)),
-                request -> template.findOne(filterById(request.pathVariable("id")), TableroViewModel.class, "gameveiw")
-                        .flatMap(element -> ServerResponse.ok())
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .body(BodyInserters.fromPublisher(Mono.just(elem), TableroViewModel.class)))
-            );
+                GET("/api/juego/{id}"),
+                request -> template.findOne(filterById(request.pathVariable("id")), TableroViewModel.class, "gameview")
+                        .flatMap(element -> ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(BodyInserters.fromPublisher(Mono.just(element), TableroViewModel.class)))
+        );
     }
 
-    //TODO: obtener mazo
     @Bean
     public RouterFunction<ServerResponse> getMazo() {
         return route(
-                GET("/juego/mazo/{uid}/{juegoId}").and(accept(MediaType.APPLICATION_JSON)),
-                request -> template.findOne(filterByJuegoIddAndUid(request.pathVariable("uid"),request.pathVariable("juegoId")), MazoViewModel.class, "mazoview")
+                GET("/api/juego/mazo/{uid}/{juegoId}").and(accept(MediaType.APPLICATION_JSON)),
+                request -> template.findOne(filterByUidAndId(request.pathVariable("uid"),request.pathVariable("juegoId")), MazoViewModel.class, "mazoview")
                         .flatMap(elem ->ServerResponse.ok()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .body(BodyInserters.fromPublisher(Mono.just(elem),MazoViewModel.class)))
+                                .body(BodyInserters.fromPublisher(Mono.just(elem), MazoViewModel.class)))
         );
     }
 
@@ -67,5 +69,16 @@ public class QueryHandle {
         );
     }
 
+    private Query filterById(String juegoId) {
+        return new Query(
+                Criteria.where("_id").is(juegoId)
+        );
+    }
+
+    private Query filterByUidAndId(String uid, String juegoId) {
+        return new Query(
+                Criteria.where("juegoId").is(juegoId).and("uid").is(uid)
+        );
+    }
 
 }
