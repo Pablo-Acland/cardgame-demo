@@ -78,8 +78,6 @@ Fdomain/src/main/java/org/example/cardgame/domain/JuegoEventChange.java,3/a/3ad
 Rbusiness/src/main/java/org/example/cardgame/usecase/usecase/UseCaseForCommand.java,6/1/6163d414ab2d5e3fc35caae5c64e2eed49b521d1
 
 Odomain/src/main/java/org/example/cardgame/domain/command/CrearJuegoCommand.java,5/1/51a32fe7d53527074c4074c5891ac26459c635e8
-è
-_applications/app-service/src/main/java/org/example/cardgame/application/handle/QueryHandle.java,f\e\fe7e80368b0497efd5213eb5ba53eaf48b105637
 ê
 `applications/app-service/src/main/java/org/example/cardgame/application/handle/ErrorHandler.java,a\e\aed25e7ad7e33c8c4231e44e7e5d8a2c0edd94dd
 •
@@ -90,3 +88,17 @@ uapplications/app-service/src/main/java/org/example/cardgame/application/handle/
 	Readme.md,0\c\0c1945d7443c2e154bd3e421c0d438bd4086d8c3
 @
 web/package.json,0\1\01d78f907856b83c5feb4f9973a0c8ad9d511556
+Ç
+Rbusiness/src/main/java/org/example/cardgame/usecase/usecase/CrearJuegoUseCase.java,e\2\e2ec0c6dd72e08e4b8665d04750b7951885863fc
+®
+xapplications/app-service/src/main/java/org/example/cardgame/application/handle/usecase/DeterminarGanadorEventHandle.java,9\7\978c8a549e1f15c2058f998e237fdfccf7c5c6aa
+°
+qapplications/app-service/src/main/java/org/example/cardgame/application/handle/usecase/CrearRondaEventHandle.java,a\5\a542d11f6b9643153b50e7ac3b42177f7d7972ed
+Ç
+Rapplications/app-proxy/src/main/java/org/example/cardgame/websocket/AppSocket.java,2\f\2fa054f5c7e5e8fa7cfcba22d9933a9fca99f66d
+á
+Wapplications/app-service/src/main/java/org/example/cardgame/application/AppService.java,3\e\3e99e4004b5fb0dfbcdb3cbd6df742c54fde205c
+ë
+aapplications/app-service/src/main/java/org/example/cardgame/application/handle/CommandHandle.java,1\b\1b131b7e0b03c237b8d6408a499a7361209335b9
+è
+_applications/app-service/src/main/java/org/example/cardgame/application/handle/QueryHandle.java,f\e\fe7e80368b0497efd5213eb5ba53eaf48b105637

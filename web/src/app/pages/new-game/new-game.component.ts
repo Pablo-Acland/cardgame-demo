@@ -58,6 +58,7 @@ export class NewGameComponent implements OnInit, OnDestroy {
         }
         return user;
       });
+      console.log(this.users)
       this.filteredUsers = this.userControl.valueChanges.pipe(
         startWith<string | User[]>(""),
         map(value => (typeof value === "string" ? value : this.lastFilter)),

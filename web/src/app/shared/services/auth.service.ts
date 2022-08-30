@@ -49,7 +49,7 @@ export class AuthService {
     return this.authLogin(new firebase.auth.GoogleAuthProvider()).then((res: any) => {
       if (res) {
         console.log("google loging");
-        this.router.navigate(['home']);
+        window.location.href = '/home'
       }
     });
   }
@@ -59,7 +59,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result: any) => {
         this.setUserData(result.user);
-        this.router.navigate(['home']);
+        return result.user
       })
       .catch((error: any) => {
         window.alert(error);
