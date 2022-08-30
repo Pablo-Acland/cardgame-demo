@@ -7,7 +7,7 @@ export interface TableroModel {
 
 export interface Tablero {
      jugadores: [],
-     cartas: any,
+     cartas: Map<string, Carta[]>,
 }
 export interface Ronda {
     jugadores: [],

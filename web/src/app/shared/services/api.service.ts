@@ -1,11 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { CrearJuegoCommand } from '../commands/crearJuegoCommand';
-import { Jugador } from '../model/juego';
+import { CrearRondaCommand } from '../commands/crearRondaCommand';
+import { IniciarJuegoCommand } from '../commands/iniciarJuegoCommand';
+import { IniciarRondaCommand } from '../commands/iniciarRondaCommand';
+import { PonerCartaCommand } from '../commands/ponerCartaCommand';
+import { JuegoModel, Jugador } from '../model/juego';
+import { TableroModel } from '../model/tablero';
 import { User } from '../model/user';
 
 @Injectable({
@@ -17,7 +22,7 @@ export class ApiService {
   ) { }
 
   crearJuego(command: CrearJuegoCommand) {
-    return this.http.post(environment.apiBase + '/juego/crear', command);
+    return this.http.post(environment.apiBase + '/api/juego/crear', command);
   }
 
 
@@ -31,15 +36,31 @@ export class ApiService {
     }));
   }
 
-  //TODO: consulta de mis juegos
-  getMisJuegos(uid: string) {
-    return this.http.get(environment.apiBase + "/juego/listar/" + uid)
+  getMisJuegos(uid: string): Observable<JuegoModel[]> {
+    return this.http.get<JuegoModel[]>(environment.apiBase + '/api/juego/listar/'+uid);
+   }
 
+  getMiMazo(uid: string, juegoId: string) {
+    return this.http.get(environment.apiBase + '/api/juego/mazo/'+uid+'/'+juegoId);
+   }
+
+  getTablero(juegoId: string): Observable<TableroModel> { 
+    return this.http.get<TableroModel>(environment.apiBase + '/api/juego/'+juegoId);
   }
 
-  //TODO: consulta de mi mazo
-  getMiMazo(uid: string, juegoId: string) { }
+  ponerCarta(command: PonerCartaCommand){
+    return this.http.post(environment.apiBase + '/api/juego/poner', command);
+  }
 
-  //TODO: consulta tablero del juego
-  getTablero(juegoId: string) { }
+  iniciarRonda(command: IniciarRondaCommand){
+    return this.http.post(environment.apiBase + '/api/juego/ronda/iniciar', command);
+  }
+
+  iniciar(command: IniciarJuegoCommand){
+    return this.http.post(environment.apiBase + '/api/juego/iniciar', command);
+  }
+
+  crearRonda(command: CrearRondaCommand){
+    return this.http.post(environment.apiBase + '/api/juego/crear/ronda', command);
+  }
 }

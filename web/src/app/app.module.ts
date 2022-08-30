@@ -19,6 +19,13 @@ import { BoardComponent } from './pages/board/board.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './componets/header/header.component'
+
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table'
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +46,11 @@ import { HeaderComponent } from './componets/header/header.component'
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

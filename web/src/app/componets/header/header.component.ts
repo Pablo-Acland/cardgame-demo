@@ -20,6 +20,9 @@ export class HeaderComponent implements OnInit {
   inicio(){
     this.router.navigate(['home'])
   }
+  list(){
+    this.router.navigate(['list'])
+  }
   newGame(){
     this.router.navigate(['new'])
   }
