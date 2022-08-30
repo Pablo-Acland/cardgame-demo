@@ -137,7 +137,6 @@ public class GameMaterializeHandle {
         template.updateFirst(getFilterByAggregateId(event),data, COLLECTION_VIEW).block();
     }
 
-    //TODO: handle para finalizar evento
     @EventListener
     public void handleJuegoFinalizado(JuegoFinalizado event){
         var data = new Update();

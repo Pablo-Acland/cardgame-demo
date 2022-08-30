@@ -78,16 +78,12 @@ Fdomain/src/main/java/org/example/cardgame/domain/JuegoEventChange.java,3/a/3ad
 Rbusiness/src/main/java/org/example/cardgame/usecase/usecase/UseCaseForCommand.java,6/1/6163d414ab2d5e3fc35caae5c64e2eed49b521d1
 
 Odomain/src/main/java/org/example/cardgame/domain/command/CrearJuegoCommand.java,5/1/51a32fe7d53527074c4074c5891ac26459c635e8
-Ç
-Rbusiness/src/main/java/org/example/cardgame/usecase/usecase/CrearJuegoUseCase.java,e\2\e2ec0c6dd72e08e4b8665d04750b7951885863fc
 è
 _applications/app-service/src/main/java/org/example/cardgame/application/handle/QueryHandle.java,f\e\fe7e80368b0497efd5213eb5ba53eaf48b105637
 ê
 `applications/app-service/src/main/java/org/example/cardgame/application/handle/ErrorHandler.java,a\e\aed25e7ad7e33c8c4231e44e7e5d8a2c0edd94dd
 •
 uapplications/app-service/src/main/java/org/example/cardgame/application/handle/materialize/MazoMaterializeHandle.java,e\9\e91f332368dbd9ea8d4a5ada62fef5b7b7e98816
-ë
-aapplications/app-service/src/main/java/org/example/cardgame/application/handle/CommandHandle.java,1\b\1b131b7e0b03c237b8d6408a499a7361209335b9
 •
 uapplications/app-service/src/main/java/org/example/cardgame/application/handle/materialize/GameMaterializeHandle.java,2\f\2f37074542a879aafa21e05976375577cae5592e
 9

@@ -35,6 +35,7 @@ public class MazoMaterializeHandle {
         this.template = template;
     }
 
+    //TODO: handle Jugador Agregado
     @EventListener
     public void handleJugadorAgregado(JugadorAgregado event) {
         var mazo = event.getMazo().value();
@@ -61,7 +62,6 @@ public class MazoMaterializeHandle {
         template.save(data, COLLECTION_VIEW).block();
     }
 
-
     @EventListener
     public void handleCartaQuitadaDelMazo(CartaQuitadaDelMazo event){
         var query = filterByUidAndId(event.getJugadorId().value(), event.aggregateRootId());
@@ -75,7 +75,6 @@ public class MazoMaterializeHandle {
                     template.updateFirst(query, data, COLLECTION_VIEW).block();
                 });
     }
-
 
     @EventListener
     public void handleCartasAsignadasAJugador(CartasAsignadasAJugador event){
@@ -106,5 +105,6 @@ public class MazoMaterializeHandle {
                 Criteria.where("juegoId").is(juegoId).and("uid").is(uid)
         );
     }
+
 
 }
